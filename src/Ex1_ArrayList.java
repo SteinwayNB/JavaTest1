@@ -11,8 +11,8 @@ public class Ex1_ArrayList {
 
         allNames.add("Samuel"); allDollars.add(14.6); isOscar.add(false);
         allNames.add("Robert");allDollars.add(24.1); isOscar.add(true);
-//        allNames.add("Zoe");allDollars.add(13.3); isOscar.add(false);
-//        allNames.add("Tom Cruise");allDollars.add(15.6); isOscar.add(false);
+        allNames.add("Zoe");allDollars.add(13.3); isOscar.add(false);
+        allNames.add("Tom Cruise");allDollars.add(15.6); isOscar.add(false);
 
 //        System.out.println(allNames);
 
