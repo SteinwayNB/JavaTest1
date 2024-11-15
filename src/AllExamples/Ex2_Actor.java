@@ -36,7 +36,35 @@ public class Ex2_Actor {
         sales += n;
     }
 
+    public String getRole() {
+        return role;
+    }
 
+    public void setRole(String role) {
+        this.role = role;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSales() {
+        return sales;
+    }
+
+    public void setSales(int sales) {
+        this.sales = sales;
+    }
+
+    public boolean isPro() {
+        return isPro;
+    }
+
+    public void setPro(boolean pro) {
+        isPro = pro;
+    }
 }
