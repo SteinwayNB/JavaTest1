@@ -23,5 +23,10 @@ public class As1_Crop {
         return name+" "+yield+" "+units+" "+price+" "+acres;
     }
 
+    public void printMe(){
+        System.out.println("Crop Name: "+name+"; Crop Yield: "+yield+" "+units+"; Crop Price: "+price+"; Crop Total Acres: "+acres);
+    }
+
+
 
 }
