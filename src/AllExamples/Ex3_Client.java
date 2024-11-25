@@ -1,37 +1,44 @@
 package AllExamples;
 
-import java.nio.file.attribute.UserDefinedFileAttributeView;
-
 public class Ex3_Client {
-    //instances variables
+
+    //instance variables
     private String name;
     private String address;
-    private int lawnsize;
+    private int lawnSize;
     private boolean hasDog;
     private double outstandingFees;
 
     //constructor method
-    public Ex3_Client(String n, String a, int s, boolean d){
+    public Ex3_Client(  String n, String a, int s, boolean d   ){
         name = n;
         address = a;
-        lawnsize = s;
+        lawnSize = s;
         hasDog = d;
         outstandingFees = 0;
-    }
+    }//constructor
+    public Ex3_Client(  String n, String a, int s, boolean d , double f  ){
+        name = n;
+        address = a;
+        lawnSize = s;
+        hasDog = d;
+        outstandingFees = f;
+    }//constructor
 
 
     //instance methods
     public String toString(){
-        return name + "  "+address+"  "+ lawnsize+"  "+hasDog+"  "+outstandingFees;
-    }
+        return name +"    " + address + "    " + lawnSize + "    " + hasDog + "    " + outstandingFees;
+    }//toString
 
     public void mowLawn(){
-        double baseFee = 20;
 
-        if(lawnsize < 300){
-            baseFee += 0.1*lawnsize;
-        }else{
-            baseFee += 0.15*lawnsize;
+        double baseFee = 20;
+        if(lawnSize < 300){
+            baseFee +=  0.1 * lawnSize;
+        }
+        else{
+            baseFee +=  0.15 * lawnSize;
         }
 
         if(hasDog){
@@ -39,8 +46,52 @@ public class Ex3_Client {
         }
 
         outstandingFees += baseFee;
-        System.out.println(name +" your lawn was mowed today for a charge of $"+baseFee);
-        System.out.println("You currently owe $"+outstandingFees);
+
+        System.out.println(name + " your lawn was mowed today for a charge of $" + baseFee);
+        System.out.println("You currently owe: $" + outstandingFees);
+
+
+    }//mowLawn
+
+    public void processPayment(double dollars){
+        outstandingFees -= dollars;
+        System.out.println(name + " you currently owe $" + outstandingFees);
     }
 
+
+    public String getName() {
+        return name;
+    }
+
+    public void delinquent(){
+        if( outstandingFees > 800){
+            double interest = 10 + outstandingFees*0.05;
+            outstandingFees += interest;
+            System.out.println(name + " your payment is overdue. You have been charged interest of $" + interest);
+
+            if(hasDog){
+                hasDog = false;
+            }
+
+
+        }
+
+
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public int getLawnSize() {
+        return lawnSize;
+    }
+
+    public boolean isHasDog() {
+        return hasDog;
+    }
+
+    public double getOutstandingFees() {
+        return outstandingFees;
+    }
 }

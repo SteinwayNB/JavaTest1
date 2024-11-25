@@ -1,6 +1,6 @@
 package Assignments;
 
-import AllExamples.Ex2_Actor;
+//import AllExamples.Ex2_Actor;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -46,11 +46,11 @@ public class As1_Main {
             if (choice == 2) {
                 System.out.println("What is the name of the crop");
                 String cropName = input.nextLine();
-                if(searchByName(allCrops,cropName) == -1){
-                    System.out.println("Not found");
-                    break;
-                }
-               allCrops.get(searchByName(allCrops,cropName)).printMe();
+//                if(searchByName(allCrops,cropName) == -1){
+//                    System.out.println("Not found");
+//                    break;
+//                }
+//               allCrops.get(searchByName(allCrops,cropName)).printMe();
 
 
             }
@@ -67,13 +67,13 @@ public class As1_Main {
         }//while
 
     }
-    public static int searchByName(ArrayList<As1_Crop> list, String searchTerm){
-        for (int i = 0; i < list.size(); i++) {
-            if(searchTerm.equalsIgnoreCase(list.get(i).name)){
-                return i;
-            }
-        }
-        return -1;
-    }
+//    public static int searchByName(ArrayList<As1_Crop> list, String searchTerm){
+//        for (int i = 0; i < list.size(); i++) {
+//            if(searchTerm.equalsIgnoreCase(list.get(i).name)){
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
 
 }
