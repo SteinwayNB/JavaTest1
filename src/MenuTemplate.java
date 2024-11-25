@@ -1,3 +1,5 @@
+import AllExamples.Library;
+
 public class MenuTemplate {
     public static void run() {
 

@@ -1,4 +1,4 @@
-package Examples;
+package AllExamples;
 
 public class Ex2_Actor {
 
