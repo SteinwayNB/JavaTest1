@@ -27,6 +27,23 @@ public class As1_Crop {
         System.out.println("Crop Name: "+name+"; Crop Yield: "+yield+" "+units+"; Crop Price: "+price+"; Crop Total Acres: "+acres);
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public double getYield() {
+        return yield;
+    }
 
+    public String getUnits() {
+        return units;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public int getAcres() {
+        return acres;
+    }
 }

@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class As1_Main {
     public static void run(){
+        double totalRevenue = 0;
         Scanner input = new Scanner(System.in);
         ArrayList<As1_Crop> allCrops = new ArrayList<>();
         allCrops.add(new As1_Crop("corn", 202, "bushels", 437.5));
@@ -46,18 +47,30 @@ public class As1_Main {
             if (choice == 2) {
                 System.out.println("What is the name of the crop");
                 String cropName = input.nextLine();
-//                if(searchByName(allCrops,cropName) == -1){
-//                    System.out.println("Not found");
-//                    break;
-//                }
-//               allCrops.get(searchByName(allCrops,cropName)).printMe();
+                if(searchByName(allCrops,cropName) == -1){
+                    System.out.println("Not found");
+                    break;
+                }
+                allCrops.get(searchByName(allCrops,cropName)).printMe();
+                System.out.println("Do you wish to harvest this crop");
+                boolean isH = input.nextBoolean();
+                if(isH){
+                    System.out.println("Harvest Value: $"+allCrops.get(searchByName(allCrops,cropName)).getAcres() * allCrops.get(searchByName(allCrops,cropName)).getPrice() * allCrops.get(searchByName(allCrops,cropName)).getYield());
+                    totalRevenue += allCrops.get(searchByName(allCrops,cropName)).getAcres() * allCrops.get(searchByName(allCrops,cropName)).getPrice() * allCrops.get(searchByName(allCrops,cropName)).getYield();
+                    allCrops.get(searchByName(allCrops,cropName)).setAcres(0);
+
+                }
 
 
             }
             if (choice == 3) {
-                System.out.println("Cool dadio!");
+                System.out.println("Total revenue from all harvested crops:  $ "+totalRevenue);
             }
             if (choice == 4) {
+                System.out.println("What do you want to plant");
+                String newCrop = input.nextLine();
+                System.out.println("How many acres do you want to plant");
+
 
             }
             if(choice == 5){
@@ -67,13 +80,13 @@ public class As1_Main {
         }//while
 
     }
-//    public static int searchByName(ArrayList<As1_Crop> list, String searchTerm){
-//        for (int i = 0; i < list.size(); i++) {
-//            if(searchTerm.equalsIgnoreCase(list.get(i).name)){
-//                return i;
-//            }
-//        }
-//        return -1;
-//    }
+    public static int searchByName(ArrayList<As1_Crop> list, String searchTerm){
+        for (int i = 0; i < list.size(); i++) {
+            if(searchTerm.equalsIgnoreCase(list.get(i).getName())){
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }

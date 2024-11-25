@@ -6,9 +6,9 @@ import Assignments.As1_Main;
 public class Main {
 
     public static void main(String[] args) {
-        Ex1_ArrayLists.run();
+//        Ex1_ArrayLists.run();
 //        Ex3_Main.run();
-//        As1_Main.run();
+        As1_Main.run();
     }
 
 }
