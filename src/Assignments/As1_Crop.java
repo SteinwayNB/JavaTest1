@@ -5,7 +5,7 @@ public class As1_Crop {
     private double yield;
     private String units;
     private double price;
-    private int acres;
+    private double acres;
 
     public As1_Crop(String n, double y, String u, double p){
         name = n;
@@ -15,7 +15,7 @@ public class As1_Crop {
         acres = 0;
     }
 
-    public void setAcres(int acres) {
+    public void setAcres(double acres) {
         this.acres = acres;
     }
 
@@ -43,7 +43,7 @@ public class As1_Crop {
         return price;
     }
 
-    public int getAcres() {
+    public double getAcres() {
         return acres;
     }
 }

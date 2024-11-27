@@ -70,6 +70,25 @@ public class As1_Main {
                 System.out.println("What do you want to plant");
                 String newCrop = input.nextLine();
                 System.out.println("How many acres do you want to plant");
+                double numA = input.nextDouble();
+                input.nextLine();
+                boolean isEx = false;
+                if(searchByName(allCrops,newCrop) != -1){
+                    isEx = true;
+                    allCrops.get(searchByName(allCrops,newCrop)).setAcres(allCrops.get(searchByName(allCrops,newCrop)).getAcres() + numA);
+                }else if(searchByName(allCrops,newCrop) == -1){
+                    System.out.println("What is the yield of this crop?");
+                    double newY = input.nextDouble();
+                    input.nextLine();
+                    System.out.println("What is the unit of this crop?");
+                    String newU = input.nextLine();
+                    System.out.println("What is the price of this crop?");
+                    double newP = input.nextDouble();
+                    input.nextLine();
+                    allCrops.add(new As1_Crop(newCrop,newY,newU,newP ));
+                    allCrops.get(allCrops.size()-1).setAcres(numA);
+                }
+
 
 
             }
