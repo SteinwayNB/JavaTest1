@@ -55,9 +55,25 @@ public class As3_LeagueMain {
 
             }
             if (choice == 4) {
-
+                sortByConductors(allTeams);
+                for (int i = 0; i < allTeams.size(); i++) {
+                    allTeams.get(i).printMe();
+                }
             }
             if(choice == 5){
+//                System.out.println("Which Orchestra would you like to update? Type in the history of that Orchestra");
+//                int tempHis = Library.input.nextInt();
+//                Library.input.nextLine();
+//                System.out.println("By how much would you like to update the earnings?");
+//                int numUp = Library.input.nextInt();
+//                Library.input.nextLine();
+//                for (int i = 0; i < allTeams.size(); i++) {
+//                    if(allTeams.get(i).getTime() == tempHis){
+//                        allTeams.get(i).setEarnings(allTeams.get(i).getEarnings()+numUp);
+//                    }
+//                }
+
+
 
             }
             if(choice == 6){
@@ -120,4 +136,23 @@ public class As3_LeagueMain {
         }
 
     }//end saveFile
+
+    public static void sortByConductors(ArrayList<As3_Team> list){
+        for (int i = 0; i < list.size()-1; i++) {
+            int lowestIndex = i;
+            for (int j = i+1; j < list.size(); j++) {
+                if(list.get(j).getConductor().compareToIgnoreCase(list.get(lowestIndex).getConductor())<0){
+                    lowestIndex = j;
+                }
+            }
+            As3_Team tempTeam = list.get(i);
+            list.set(i, list.get(lowestIndex));
+            list.set(lowestIndex, tempTeam);
+        }
+
+    }
+
+
+
+
 }

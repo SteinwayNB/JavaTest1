@@ -17,6 +17,9 @@ public class As3_Team {
         earnings = en;
     }
 
+
+
+
     public void printMe(){
         System.out.println("name: "+name+", region: "+region+", number of albums: "+numAlbums+", history: "+time+" years, conductor: "+conductor+", earnings: $"+earnings+"K");
     }
@@ -44,5 +47,8 @@ public class As3_Team {
 
     public String getName() {
         return name;
+    }
+    public void setEarnings(int earnings) {
+        this.earnings = earnings;
     }
 }
